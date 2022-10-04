@@ -17,7 +17,7 @@ docker build -t luanarndt/zabbix-proxy-odbc .
 2. Create odbc.ini according as Zabbix Documentation:
 https://www.zabbix.com/documentation/current/en/manual/config/items/itemtypes/odbc_checks
 
-3. Finally, run docker mapping your odbc.ini to /etc/odbc.ini:
+3. Finally, execute "docker run" mapping your odbc.ini to /etc/odbc.ini::
 
 ```
 docker run -d -v /root/odbc.ini:/etc/odbc.ini luanarndt/zabbix-proxy-odbc
