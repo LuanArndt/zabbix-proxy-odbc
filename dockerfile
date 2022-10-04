@@ -1,5 +1,4 @@
-FROM zabbix/zabbix-proxy-sqlite3:ubuntu-6.0.2
-USER root
+FROM zabbix/zabbix-proxy-sqlite3:ubuntu-latest
 
 ENV ZBX_PROXYMODE=0
 ENV ZBX_HOSTNAME=zabbix-proxy-sqlite3
@@ -70,6 +69,7 @@ ENV ZBX_TLSCIPHERCERT13=
 ENV ZBX_TLSCIPHERPSK=
 ENV ZBX_TLSCIPHERPSK13=
 
+USER root
 SHELL ["/bin/bash", "-c"]
 RUN apt update && \
     apt install apt-utils nano gpg curl tzdata -yq && \
