@@ -72,9 +72,7 @@ ENV ZBX_TLSCIPHERPSK13=
 USER root
 SHELL ["/bin/bash", "-c"]
 RUN apt update && \
-    apt install apt-utils nano gpg curl tzdata -yq && \
-    ln -fs /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime && \
-    dpkg-reconfigure -f noninteractive tzdata && \
+    apt install apt-utils gpg curl -yq && \
     curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add - && \
     curl https://packages.microsoft.com/config/ubuntu/20.04/prod.list > /etc/apt/sources.list.d/mssql-release.list && \
     apt update && \
