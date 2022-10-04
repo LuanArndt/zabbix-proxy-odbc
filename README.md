@@ -24,3 +24,8 @@ docker run -d -v /root/odbc.ini:/etc/odbc.ini luanarndt/zabbix-proxy-odbc
 ```
 
 Change the "/root/odbc.ini" according to the path of your odbc.ini.
+
+---
+
+Special thanks to Julio Dobkovski, for sharing the step-by-step on the Zabbix Forum:
+https://www.zabbix.com/forum/zabbix-help/413055-installation-and-configuration-of-mssql-by-odbc-docker
