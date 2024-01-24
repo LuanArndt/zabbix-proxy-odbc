@@ -76,8 +76,8 @@ RUN apt update && \
     curl https://packages.microsoft.com/keys/microsoft.asc | sudo tee /etc/apt/trusted.gpg.d/microsoft.asc && \
     curl -fsSL https://packages.microsoft.com/config/ubuntu/22.04/mssql-server-2022.list | sudo tee /etc/apt/sources.list.d/mssql-server-2022.list && \
     apt update && \
-    ACCEPT_EULA=Y apt-get install msodbcsql17 -yq && \
-    ACCEPT_EULA=Y apt-get install mssql-tools -yq && \
-    echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bash_profile && \
-    echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bashrc && \
+    ACCEPT_EULA=Y apt-get install msodbcsql18 -yq && \
+    ACCEPT_EULA=Y apt-get install mssql-tools18 -yq && \
+    echo 'export PATH="$PATH:/opt/mssql-tools18/bin"' >> ~/.bash_profile && \
+    echo 'export PATH="$PATH:/opt/mssql-tools18/bin"' >> ~/.bashrc && \
     source ~/.bashrc
