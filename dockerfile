@@ -73,8 +73,8 @@ USER root
 SHELL ["/bin/bash", "-c"]
 RUN apt update && \
     apt install apt-utils gpg curl -yq && \
-    curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add - && \
-    curl https://packages.microsoft.com/config/ubuntu/20.04/prod.list > /etc/apt/sources.list.d/mssql-release.list && \
+    curl -fsSL https://packages.microsoft.com/keys/microsoft.asc | sudo gpg --dearmor -o /usr/share/keyrings/microsoft-prod.gpg && \
+    curl -fsSL https://packages.microsoft.com/config/ubuntu/22.04/mssql-server-2022.list | sudo tee /etc/apt/sources.list.d/mssql-server-2022.list && \
     apt update && \
     ACCEPT_EULA=Y apt-get install msodbcsql17 -yq && \
     ACCEPT_EULA=Y apt-get install mssql-tools -yq && \
